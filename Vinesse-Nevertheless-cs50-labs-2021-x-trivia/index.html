@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            //create play method for the confirmation sound
+            function play()
+            {
+            var audio = new Audio('Saturn_sound.mp3');
+            audio.play();
+            }
+
+            //Color buttons and fields and play confirmation sound according to whether the answer is correct or not
+            function colorGreen(ans, pId)
+                {
+                    ans.style.backgroundColor = '#74c798';
+                    document.getElementById(pId).innerHTML = "Correct!";
+                    play();
+                }
+            function colorRed(ans, pId)
+                {
+                    ans.style.backgroundColor = '#EE9191';
+                    document.getElementById(pId).innerHTML = "Incorrect";
+                }
+
+
+        //called by the form listener to check the user's response for correctness
+            function checker1()
+                {
+                    var response1 = document.querySelector('#check1');
+                    if(response1.value == "no")
+                    {
+                        colorGreen(response1, "fill1");
+                    }
+                    else
+                    {
+                    colorRed(response1, "fill1");
+                    }
+                }
+
+            function checker2()
+                {
+                 var response2 = document.querySelector('#check2');
+                    if(response2.value == 82)
+                    {
+                        colorGreen(response2, "fill2");
+                    }
+                    else
+                    {
+                    colorRed(response2, "fill2");
+                    }
+                }
+
+
+        //form listener for the clicking of onsubmit to submit free answer form
+            function flisten()
+                {
+                    document.querySelector('form').addEventListener('submit', checker1, checker2)
+                 }
+            document.addEventListener('DOMContentLoaded', flisten);
+        </script>
+    </head>
+
+    <body>
+        <div class="saturn-image">
+            <div class="jumbotron">
+            <h1>Saturnian Trivia!</h1>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- Ask multiple choice question and create clickable buttons for answer options -->
+                     <h3>
+                        Which is the name of the massive gap between planet Saturn's A Ring and B Ring?
+                    </h3>
+                    <button id = "Maffei" onclick = "colorRed(Maffei, 'multi1')" class = 'wrong' >Gulf of Maffei I </button>
+                    <button id = "Cassini" onclick = "colorGreen(Cassini, 'multi1')" class = 'right'>Cassini Division</button>
+                    <button id = "Vulcan" onclick = "colorRed(Vulcan, 'multi1')" class = 'wrong'>Vulcan Divide</button>
+                    <button id = "Helios" onclick = "colorRed(Helios, 'multi1')" class = 'wrong'>Helios Band</button>
+                    <button id = "Ibris" onclick = "colorRed(Ibris, 'multi1')" class = 'wrong'>Ibris Interval</button>
+            </div>
+
+            <p id="multi1"></p>
+
+            <div class="section">
+                <hr>
+                <!-- Ask multiple choice question and create clickable buttons for answer options -->
+                     <h3>
+                        Saturn has the only moon in the solar system with a dense atmosphere, clouds, and liquids on the surface. <br>
+                        What is the moon's name?
+                    </h3>
+                    <button id = "Dione" onclick = "colorRed(Dione, 'multi2')" class = 'wrong' >Dione </button>
+                    <button id = "Hyperion" onclick = "colorRed(Hyperion, 'multi2')" class = 'wrong'>Hyperion</button>
+                    <button id = "Tethys" onclick = "colorRed(Tethys, 'multi2')" class = 'wrong'>Tethys</button>
+                    <button id = "Luna" onclick = "colorRed(Luna, 'multi2')" class = 'wrong'>Luna</button>
+                    <button id = "Titan" onclick = "colorGreen(Titan, 'multi2')" class = 'right'>Titan</button>
+            </div>
+            <p id="multi2"></p>
+
+             <div class="section">
+                <hr>
+                <!-- Ask multiple choice question and create clickable buttons for answer options -->
+                     <h3>
+                        If you could put Saturn in a galatic size bathtub, it would float. <br>
+
+                    </h3>
+                    <button id = "fact" onclick = "colorGreen(fact, 'multi3')" class = 'right'>Science Fact</button>
+                    <button id = "fiction" onclick = "colorRed(fiction, 'multi3')" class = 'wrong' >Science Fiction </button>
+
+            </div>
+            <p id="multi3"></p>
+
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!--Ask free response question and use onsubmit with form to submit the answer for checking-->
+                <h3>
+                    Is Saturn the only planet in our solar system that has rings?
+                </h3>
+                <form onsubmit ="setTimeout(checker1, 1000); return false;">
+                    <input id="check1" type ="text" autofocus placeholder="">
+                    <input type = "submit" value = "Check Answer">
+                </form>
+            </div>
+
+            <p id="fill1"></p>
+
+            <div class="section">
+                <hr>
+                <!--Ask free response question and use onsubmit with form to submit the answer for checking-->
+                <h3>
+                    How many moons (confirmed and unconfirmed) does Saturn have?
+                </h3>
+                <form onsubmit ="setTimeout(checker2, 1000); return false;">
+                    <input id="check2" type ="text" autofocus placeholder="">
+                    <input type = "submit" value = "Check Answer">
+                </form>
+            </div>
+
+             <p id="fill2"></p>
+            </div>
+    </body>
+</html>
