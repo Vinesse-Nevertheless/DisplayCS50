@@ -1,4 +1,21 @@
-# Vinesse-Nevertheless. Lab 8: Trivia
+# Vinesse-Nevertheless. CS 50 Lab 8: Trivia
+
+## Getting Started
+Here’s how to download this lab into your own CS50 IDE. Log into CS50 IDE and then, in a terminal window, execute each of the below.
+
+Execute cd to ensure that you’re in ~/ (i.e., your home directory, aka ~).
+
+Execute wget https://cdn.cs50.net/2020/fall/labs/8/lab8.zip to download a (compressed) ZIP file with this problem’s distribution.
+
+Execute unzip lab8.zip to uncompress that file.
+
+Execute rm lab8.zip followed by yes or y to delete that ZIP file.
+
+Execute ls. You should see a directory called lab8, which was inside of that ZIP file.
+
+Execute cd lab8 to change into that directory.
+E
+xecute ls. You should see an index.html and a styles.css file.
 
 ## Implementation Details
 Design a webpage using HTML, CSS, and JavaScript to let users answer trivia questions.
