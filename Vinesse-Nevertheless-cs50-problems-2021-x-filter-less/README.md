@@ -81,9 +81,11 @@ Consider the following grid of pixels, where we’ve numbered each pixel.
 
 ![grid](https://user-images.githubusercontent.com/88684757/146025419-dcbe9e92-645a-43e2-9404-d52c35941165.png)
 
-The new value of each pixel would be the average of the values of all of the pixels that are within 1 row and column of the original pixel (forming a 3x3 box). For example, each of the color values for pixel 6 would be obtained by averaging the original color values of pixels 1, 2, 3, 5, 6, 7, 9, 10, and 11 (note that pixel 6 itself is included in the average). Likewise, the color values for pixel 11 would be be obtained by averaging the color values of pixels 6, 7, 8, 10, 11, 12, 14, 15 and 16.
+So to get corner values we were asked to consider the 3 surrounding pixels in our calculation.  For example to get the value of for pixel 1, we would average the RGB values for these four pixels, 1, 2, 5, 6.
 
-For a pixel along the edge or corner, like pixel 15, we would still look for all pixels within 1 row and column: in this case, pixels 10, 11, 12, 14, 15, and 16.
+There’s a different calculation for the borders.  To get border values we were asked to consider the 5 surrounding pixels in our calculation.  For example to get the value of for pixel 5, we would average the RGB values for these 6 pixels, 1, 2, 5, 6, 9, 10.
+
+And lastly for the interior, we were asked to consider the 8 surrounding pixels in our calculation.  For example to get the value of for pixel 6, we would average the RGB values for these 9 pixels, 1, 2, 3, 5, 6, 7, 9, 10, 11.
 
 ## Getting Started
 Here’s how to download this problem’s “distribution code” (i.e., starter code) into your own CS50 IDE. Log into CS50 IDE and then, in a terminal window, execute each of the below.
